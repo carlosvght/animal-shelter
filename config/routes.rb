@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
- resources :animals
+  get 'animals/index'
+  resources :animals
+  root 'animals#index'
 end

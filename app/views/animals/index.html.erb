@@ -1,0 +1,28 @@
+<h1>Pets available</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birth</th>
+      <th>Kind</th>
+      <th>Gender</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @animals.each do |animal| %>
+    <tr>
+      <td><%= animal.name %></td>
+      <td><%= animal.birth %></td>
+      <td><%= animal.kind %></td>
+      <td><%= animal.gender %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New', new_animal_path %>
