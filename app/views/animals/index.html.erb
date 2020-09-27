@@ -19,6 +19,7 @@
       <td><%= animal.kind %></td>
       <td><%= animal.gender %></td>
       <td><%= link_to 'Show', animal %></td>
+      <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
     </tr>
     <% end %>
   </tbody>
