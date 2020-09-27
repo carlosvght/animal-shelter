@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
   end
   
   def show
-    @animal = Animal.find(params[:id])
+    @animal = Animal.friendly.find(params[:id])
   end
   
   def new
