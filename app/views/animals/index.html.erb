@@ -20,11 +20,14 @@
       <td><%= animal.gender %></td>
       <td><%= link_to 'Show', animal %></td>
       <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New', new_animal_path %>
+      <td><%= link_to 'Destroy', animal_path(animal),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <%= link_to 'New', new_animal_path %>

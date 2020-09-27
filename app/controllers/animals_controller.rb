@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
   end
   
   def show
-    @animals = Animal.find(params[:id])
+    @animal = Animal.find(params[:id])
   end
   
   def new
@@ -33,6 +33,13 @@ class AnimalsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+
+    redirect_to animals_path
   end
   
   private
