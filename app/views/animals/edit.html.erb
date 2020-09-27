@@ -1,31 +1,6 @@
-<h1>Edit Animal</h1>
+<h1>Editing Animal</h1>
 
-<%= form_with(model: @animal, local: true) do |form| %>
+<%= render 'form', animal: @animal %>
 
-<p>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-</p>
-
-<p>
-  <%= form.label :birth %>
-  <%= form.date_select :birth %>
-</p>
-
-<p>
-  <%= form.label :kind %>
-  <%= form.text_field :kind %>
-</p>
-
-<p>
-  <%= form.label :gender %>
-  <%= form.text_field :gender %>
-</p>
-
-<p>
-  <%= form.submit %>
-</p>
-
-<% end %>
-
+<%= link_to 'Show', @animal %> |
 <%= link_to 'Back', animals_path %>

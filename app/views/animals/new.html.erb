@@ -1,26 +1,5 @@
-<%= form_with scope: :animal, url: animals_path, local: true do |form| %>
+<h1>New Animal</h1>
 
-  <p>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </p>
+<%= render 'form', animal: @animal %>
 
-  <p>
-    <%= form.label :birth %>
-    <%= form.date_select :birth %>
-  </p>
-
-  <p>
-    <%= form.label :kind %>
-    <%= form.text_field :kind %>
-  </p>
-
-  <p>
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= link_to 'Back', animals_path %>
