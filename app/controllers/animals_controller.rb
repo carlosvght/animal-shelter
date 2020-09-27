@@ -3,6 +3,10 @@ class AnimalsController < ApplicationController
     @animals = Animal.all
   end
 
+  def show
+    @animals = Animal.find(params[:id])
+  end
+
   def new
     @animal = Animal.new
   end
