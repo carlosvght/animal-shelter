@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @animal.name %>
-</p>
-
-<p>
-  <strong>Birth:</strong>
-  <%= @animal.birth %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @animal.kind %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @animal.gender %>
-</p>
-
-<%= link_to 'Edit', edit_animal_path(@animal) %> |
-<%= link_to 'Back', animals_path %>
+  <p>
+    <strong>Name:</strong>
+    <%= @animal.name %>
+  </p>
+  
+  <p>
+    <strong>Birth:</strong>
+    <%= @animal.birth %>
+  </p>
+  
+  <p>
+    <strong>Kind:</strong>
+    <%= @animal.kind %>
+  </p>
+  
+  <p>
+    <strong>Gender:</strong>
+    <%= @animal.gender %>
+  </p>
+  
+  <%= link_to 'Edit', edit_animal_path(@animal) %> |
+  <%= link_to 'Back', animals_path %>
+  
