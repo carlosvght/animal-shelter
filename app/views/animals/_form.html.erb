@@ -1,26 +1,53 @@
 <%= form_with(model: animal, local: true) do |form| %>
+<% if animal.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+  
+  <ul>
+    <% animal.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <p>
+<div class="form-group">
+  <div class="col-7">
     <%= form.label :name %>
-    <%= form.text_field :name %>
-  </p>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+</div>
 
-  <p>
+<div class="form-group">
+  <div class="col-7">
     <%= form.label :birth %>
     <%= form.date_select :birth %>
-  </p>
+  </div>
+</div>
 
-  <p>
+<div class="form-group">
+  <div class="col-7">
     <%= form.label :kind %>
-    <%= form.text_field :kind %>
-  </p>
+    <%= form.text_field :kind, class: 'form-control' %>
+  </div>
+</div>
 
-  <p>
+<div class="form-group">
+  <div class="col-7">
     <%= form.label :gender %>
-    <%= form.text_field :gender %>
-  </p>
+    <%= form.text_field :gender, class: 'form-control' %>
+  </div>
+</div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+<div class="actions">
+  <div class="col-7">
+    <%= link_to animals_path, :class => "btn btn-primary" do %>
+    <i class="fa fa-arrow-left"></i> Back
+    <% end %>
+    <%= button_tag type: 'submit', class: 'btn btn-primary' do %>
+    <i class="fa fa-hdd-o"></i> Save
+    <% end %>
+  </div>
+</div>
+
 <% end %>

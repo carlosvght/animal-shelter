@@ -18,27 +18,31 @@ class AnimalsController < ApplicationController
   def create
     @animal = Animal.new(animal_params)
     
-    if @animal.save
-      redirect_to @animal
-    else
-      render 'new'
+    respond_to do |format|
+      if @animal.save
+        format.html { redirect_to @animal, notice: 'Animal was successfully created.'}
+      else
+        format.html { render :new }
+      end
     end
   end
   
   def update
     @animal = Animal.friendly.find(params[:id])
     
-    if @animal.update(animal_params)
-      redirect_to @animal
-    else
-      render 'edit'
+    respond_to do |format|
+      if @animal.update(animal_params)
+        format.html { redirect_to @animal, notice: 'Animal was successfuly updated.'}
+      else
+        format.html { render :edit}
+      end
     end
   end
-
+  
   def destroy
     @animal = Animal.friendly.find(params[:id])
     @animal.destroy
-
+    
     redirect_to animals_path
   end
   

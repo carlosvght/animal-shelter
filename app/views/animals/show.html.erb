@@ -1,25 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @animal.name %>
-  </p>
-  
-  <p>
-    <strong>Birth:</strong>
-    <%= @animal.birth %>
-  </p>
-  
-  <p>
-    <strong>Kind:</strong>
-    <%= @animal.kind %>
-  </p>
-  
-  <p>
-    <strong>Gender:</strong>
-    <%= @animal.gender %>
-  </p>
-  
-  <%= link_to 'Edit', edit_animal_path(@animal) %> |
-  <%= link_to 'Back', animals_path %>
-  
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="container-form col-sm-5">
+      <p id="notice" class="alert alert-primary"><%= notice %></p>
+      
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td><strong>Name:</strong>
+            <%= @animal.name %></td>
+            
+            <td><strong>Birth:</strong>
+            <%= @animal.birth %></td>
+            
+            <td><strong>Kind:</strong>
+            <%= @animal.kind %></td>
+            
+            <td><strong>Gender:</strong>
+            <%= @animal.gender %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <%= link_to animals_path, :class => "btn btn-primary" do %> 
+      <i class="fa fa-arrow-left"></i> Back
+      <% end %>
+      <%= link_to edit_animal_path, :class => "btn btn-primary" do %> 
+      <i class="fa fa-edit"></i> Edit
+      <% end %>
+    </div>
+  </div>
+</div>

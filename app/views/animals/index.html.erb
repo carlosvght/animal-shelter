@@ -1,33 +1,42 @@
-<h1>Pets available</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Birth</th>
-      <th>Kind</th>
-      <th>Gender</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
+  <h1 class="text-center">Pets available</h1>
   
-  <tbody>
-    <% @animals.each do |animal| %>
-    <tr>
-      <td><%= animal.name %></td>
-      <td><%= animal.birth %></td>
-      <td><%= animal.kind %></td>
-      <td><%= animal.gender %></td>
-      <td><%= link_to 'Show', animal %></td>
-      <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-      <td><%= link_to 'Destroy', animal_path(animal),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></td>
+  <table class="table table-bordered table-striped" >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Birth</th>
+        <th>Kind</th>
+        <th>Gender</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @animals.each do |animal| %>
+      <tr> 
+        <td><%= animal.name %></td>
+        <td><%= animal.birth %></td>
+        <td><%= animal.kind %></td>
+        <td><%= animal.gender %></td>
+        <td class="text-center">
+          <%= link_to animal, :class => "btn btn-primary" do %>
+          <i class="fa fa-eye"></i> Show
+          <% end %>
+          <%= link_to edit_animal_path(animal), :class => "btn btn-primary" do %>
+          <i class="fa fa-edit"></i> Edit
+          <% end %>
+          <%= link_to animal, method: :delete, data: { confirm: "Are you sure you want to remove?" }, :class => "btn btn-danger" do %>
+          <i class="fa fa-trash"></i> Delete
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>
   </table>
   
   <br>
-  
-  <%= link_to 'New', new_animal_path %>
+  <%= link_to new_animal_path, :class => "btn btn-primary" do %> 
+  <i class="fa fa-edit"></i> New
+  <% end %>
+</div>
