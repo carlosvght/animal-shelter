@@ -1,5 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe Animal, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+describe Animal do 
+  it "is valid when name, kind and gender are present" do 
+    animal = Animal.new( name: 'Beethoven', 
+      kind: 'dog', 
+      gender: 'male' ) 
+      expect(animal).to be_valid 
+    end 
+  end
+  
+  
+  describe Animal do 
+    it "é invalido sem o primeiro nome" do 
+      animal = Animal.new(name: nil) 
+      animal.valid?   
+      expect(animal.errors[:name]).to include("can't be blank") 
+    end 
+  end
