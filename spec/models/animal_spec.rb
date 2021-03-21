@@ -11,7 +11,7 @@ describe Animal do
   
   
   describe Animal do 
-    it "é invalido sem o primeiro nome" do 
+    it "is invalid whan first name are not present" do 
       animal = Animal.new(name: nil) 
       animal.valid?   
       expect(animal.errors[:name]).to include("can't be blank") 
